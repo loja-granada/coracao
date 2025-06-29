@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Coração com Frase</title>
+  <style>
+    body {
+      background: #fff0f0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      overflow: hidden;
+      font-family: 'Arial', sans-serif;
+    }
+
+    .heart {
+      font-size: 200px;
+      color: red;
+      opacity: 0;
+      transform: translateY(-100px) scale(0.5);
+      animation: surgir 2s ease-out forwards, bater 1s ease-in-out infinite 2s;
+    }
+
+    .text {
+      margin-top: 20px;
+      font-size: 50px;
+      color: #cc0000;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: textoAparece 2s ease-out forwards;
+      animation-delay: 2s;
+    }
+
+    @keyframes surgir {
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    @keyframes bater {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.2);
+      }
+    }
+
+    @keyframes textoAparece {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="heart">&#10084;</div>
+  <div class="text">I love you</div>
+</body>
+</html>
